@@ -1,70 +1,93 @@
-<script lang='typescript'>
-	import {onMount} from 'svelte';
-	let count: number = 0;
-	onMount(() => {
-	  const interval = setInterval(() => count++, 1000);
-	  return () => {
-		clearInterval(interval);
-	  };
-	});
-  </script>
+<script lang='ts'>
+import Router from 'svelte-spa-router';
+import routes from './routes'
+</script>
   
-  <style>
+<style lang="scss">
+
 	:global(body) {
-	  margin: 0;
-	  font-family: Arial, Helvetica, sans-serif;
+		height: 100vh;
+	  
+		* {
+			box-sizing: border-box;
+		}
 	}
+
 	.App {
-	  text-align: center;
-	}
-	.App code {
-	  background: #0002;
-	  padding: 4px 8px;
-	  border-radius: 4px;
-	}
-	.App p {
-	  margin: 0.4rem;
-	}
-  
-	.App-header {
-	  background-color: #f9f6f6;
-	  color: #333;
-	  min-height: 100vh;
+		height: 100%;
 	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  justify-content: center;
-	  font-size: calc(10px + 2vmin);
+		align-items: stretch;
+
+		.menu {
+			flex-basis: 160px;
+			background: #f3f3f3;
+			padding: 16px;
+
+			a { 
+				color: #2297c5;
+
+				&:visited {
+					color: #5a93aa;
+				}
+			}
+		}
+
+		.content {
+			flex-grow: 1;
+			padding: 0 16px;
+		}
 	}
-	.App-link {
-	  color: #ff3e00;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			margin-bottom: 16px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		ul {
+			padding-left: 16px;
+			list-style: circle;
+
+			li {
+				margin-bottom: 8px;
+			}
+		}
+
+		p {
+			font-size: 10px;
+			color: #666;
+			margin-bottom: 8px;
+		}
 	}
-	.App-logo {
-	  height: 36vmin;
-	  pointer-events: none;
-	  margin-bottom: 3rem;
-	  animation: App-logo-spin infinite 1.6s ease-in-out alternate;
-	}
-	@keyframes App-logo-spin {
-	  from {
-		transform: scale(1);
-	  }
-	  to {
-		transform: scale(1.06);
-	  }
-	}
-  </style>
+</style>
   
-  <div class="App">
-	<header class="App-header">
-	  <img src="/logo.svg" class="App-logo" alt="logo" />
-	  <p>Edit <code>src/App.svelte</code> and save to reload.</p>
-	  <p>Page has been open for <code>{count}</code> seconds.</p>
-	  <p>
-		<a class="App-link" href="https://svelte.dev" target="_blank" rel="noopener noreferrer">
-		  Learn Svelte
-		</a>
-	  </p>
-	</header>
-  </div>
+<div class="App">
+	<div class="menu">
+		<ul>
+			<li>
+				<p>styles</p>
+				<ul>
+					<li><a href="#/flex">flex</a></li>
+					<li><a href="#/grid">grid</a></li>
+				</ul>
+			</li>
+			<li>
+				<p>scripts</p>
+				<ul>
+					<li><a href="">-</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="content">
+		<Router {routes} />
+	</div>
+</div>
   
