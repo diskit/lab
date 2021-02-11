@@ -21,6 +21,8 @@
 
   const onSelectBlock = (event: Event) => {
     const element = event.target as Element;
+    const style = window.getComputedStyle(element);
+    console.log(style);
   }
 </script>
   
