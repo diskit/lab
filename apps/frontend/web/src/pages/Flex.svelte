@@ -2,6 +2,8 @@
 <script lang='ts'>
 
   const justifyContent = [
+    'flex-start',
+    'flex-end',
     'center',
     'space-evenly',
     'space-around',
