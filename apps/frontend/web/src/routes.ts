@@ -1,6 +1,6 @@
 import Home from './pages/Home.svelte';
-import GridArea from './pages/GridArea.svelte';
-import GridRepeat from './pages/GridRepeat.svelte';
+import GridArea from './pages/grid/Area.svelte';
+import GridRepeat from './pages/grid/Repeat.svelte';
 import Flex from './pages/Flex.svelte';
 import Sticky from './pages/Sticky.svelte';
 

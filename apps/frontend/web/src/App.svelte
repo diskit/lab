@@ -1,6 +1,17 @@
 <script lang='ts'>
 import Router from 'svelte-spa-router';
 import routes from './routes'
+
+let state: {[key: string]: boolean} = {
+	"grid": true
+}
+
+const toggle = (name: string) => {
+	state[name] = !state[name];
+}
+
+$: opened = (name: string): boolean => state[name];
+
 </script>
   
 <style lang="scss">
@@ -65,6 +76,18 @@ import routes from './routes'
 			color: #666;
 			margin-bottom: 8px;
 		}
+
+    .toggleable {
+      user-select: none;
+      ul {
+        display: none;
+      }
+      &.open {
+        ul {
+          display: block;
+        }
+      }
+    }
 	}
 </style>
   
@@ -75,8 +98,8 @@ import routes from './routes'
 				<p>styles</p>
 				<ul>
 					<li><a href="#/flex">flex</a></li>
-					<li>
-						<p>Grid</p>
+					<li class="toggleable {opened('grid') ? "open": ""}">
+						<p on:click="{() => toggle('grid')}">Grid</p>
 						<ul>
 							<li><a href="#/grid/area">area</a></li>
 							<li><a href="#/grid/repeat">repeat</a></li>
