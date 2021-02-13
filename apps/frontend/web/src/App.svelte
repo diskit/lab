@@ -75,7 +75,12 @@ import routes from './routes'
 				<p>styles</p>
 				<ul>
 					<li><a href="#/flex">flex</a></li>
-					<li><a href="#/grid">grid</a></li>
+					<li>
+						<p>Grid</p>
+						<ul>
+							<li><a href="#/grid/area">area</a></li>
+							<li><a href="#/grid/repeat">repeat</a></li>
+						</ul>
 					<li><a href="#/sticky">sticky</a></li>
 				</ul>
 			</li>
