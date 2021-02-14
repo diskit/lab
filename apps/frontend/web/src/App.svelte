@@ -24,6 +24,15 @@ $: opened = (name: string): boolean => state[name];
 		}
 	}
 
+	:global(.annotation) {
+
+		font-size: 8px;
+		color: #ef7d7d;
+		&:before {
+			content: '*';
+		}
+	}
+
 	.App {
 		height: 100%;
 	  display: flex;
