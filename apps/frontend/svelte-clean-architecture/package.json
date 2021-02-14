@@ -5,6 +5,7 @@
     "test": "web-test-runner \"src/**/*.test.ts\""
   },
   "dependencies": {
+    "reflect-metadata": "^0.1.13",
     "svelte": "^3.24.0",
     "tsyringe": "^4.4.0",
     "typed-rest-client": "^1.8.1"

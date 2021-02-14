@@ -24,6 +24,8 @@
     "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
-    "types": ["svelte", "@types/snowpack-env"]
+    "types": ["svelte", "@types/snowpack-env"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   }
 }
