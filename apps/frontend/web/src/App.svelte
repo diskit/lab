@@ -3,7 +3,8 @@ import Router from 'svelte-spa-router';
 import routes from './routes'
 
 let state: {[key: string]: boolean} = {
-	"grid": true
+	"grid": true,
+	"sticky": true
 }
 
 const toggle = (name: string) => {
@@ -113,7 +114,14 @@ $: opened = (name: string): boolean => state[name];
 							<li><a href="#/grid/area">area</a></li>
 							<li><a href="#/grid/repeat">repeat</a></li>
 						</ul>
-					<li><a href="#/sticky">sticky</a></li>
+					</li>
+					<li class="toggleable {opened('sticky') ? "open": ""}">
+						<p on:click="{() => toggle('sticky')}">Sticky</p>
+						<ul>
+							<li><a href="#/sticky">sticky</a></li>
+							<li><a href="#/sticky/table">table</a></li>
+						</ul>
+					</li>
 				</ul>
 			</li>
 			<li>
